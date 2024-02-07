@@ -1,0 +1,23 @@
+---
+const { text, color } = Astro.props
+
+const isRgbColor = color.includes("rgb")
+const backgroundColor = isRgbColor ? color.slice(0,-1).concat(", .20)") : color.concat("48")
+const backgroundStyle = `background-color:${backgroundColor};`
+
+let tagStyles = `border:2px solid ${color}; color:${color};`.concat(backgroundStyle)
+---
+
+<p class=`small-text tag` style={tagStyles}>{text}</p>
+<style>
+    .tag{
+        padding: 12px 16px;
+        border-radius: 12px;
+        margin: 0;
+    }
+
+    .no-bg{
+        background: none;
+        border: none;
+    }
+</style>

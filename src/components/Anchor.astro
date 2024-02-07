@@ -1,0 +1,57 @@
+---
+const { url, text, color, icon } = Astro.props
+
+const anchorStyles = `--color:${color};`
+---
+
+<a style={anchorStyles} class="anchor" href={ url }>
+    <img class="anchor-image" src={icon} alt="">
+    <div class="anchor-bottom-line" style={anchorStyles}></div>
+    <p class="anchor-text">{text}</p>
+</a>
+<style>
+    .anchor{
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        position: relative;
+        text-decoration: none;
+        border: 2px solid transparent;
+        color: var(--color);
+    }
+
+    .anchor-image{
+        height: 26px;
+        width: auto;
+        transition: transform .12s linear;
+    }
+
+    .anchor-text{
+        margin: 0;
+        padding: 8px 12px;
+        font-size: 16px;
+        font-weight: 500;
+        transition: transform .12s linear;
+    }
+
+    .anchor-bottom-line{
+        content: "";
+        position: absolute;
+        opacity: 0;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background-color: var(--color);
+    }
+
+    .anchor:hover .anchor-text, .anchor:hover .anchor-image{
+        transform: translateY(-5px);
+        transition: transform .12s linear;
+    }
+
+    .anchor:hover .anchor-bottom-line{
+        opacity: 1;
+    }
+
+</style>

@@ -1,0 +1,45 @@
+---
+import Tag from "./Tag.astro"
+import Anchor from "./Anchor.astro"
+---
+
+
+<header>
+    <figure class="foto-perfil">
+        <img src="/foto-mia.jpg" alt="" width="216px">
+    </figure>
+    <h1>Soy Mirko, <span style="color: rgb(36, 145, 255);">desarrolador de software.</span></h1>
+    <p class="medium-text">
+        Apasionado de las tecnologías. Estudiante de Ingeniería Informatica. 
+        <span style="font-weight:bold;">Aprendiendo diariamente.</span>
+    </p>
+    <div class="social-medias">
+        <Anchor icon="/github.svg" url="https://github.com/mirkete" color="#2c3e50" text="GitHub"/>
+        <Anchor icon="/linkedin.svg" url="https://www.linkedin.com/in/mirko-s%C3%A1enz-valiente-515673194/" color="darkblue" text="LinkedIn"/>
+    </div>
+</header>
+<style>
+    header{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        text-wrap: wrap;
+    }
+
+    .foto-perfil{
+        flex-basis: 100%;
+    }
+
+    .foto-perfil img{
+        border-radius: 50%;
+    }
+
+    .social-medias{
+        flex-basis: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+    }
+
+</style>

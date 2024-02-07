@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from "../components/Header.astro";
+import Section from '../components/Section.astro';
+import Tag from '../components/Tag.astro';
+---
+
+<Layout title="Mirko Sáenz Valiente - Portfolio">
+	<Header></Header>
+	<Section title="Conocimientos">
+		<div style="display: flex; gap:12px; flex-wrap:wrap;">
+			<Tag color="rgb(252, 15, 3)" text="HTML" />
+			<Tag color="rgb(23, 96, 233)" text="CSS" />
+			<Tag color="rgb(242, 242, 68)" text="Javascript" />
+			<Tag color="rgb(66, 207, 218)" text="React" />
+			<Tag color="rgb(0,94,134)" text="SQL" />
+		</div>
+	</Section>
+	<Section title="Estudios">
+		<p class="medium-text">Termine el secundario en 2022. En agosto de ese año comence a cursar la carrera <b>Ingeniería en Informatica</b> en la UBA.</p>
+	</Section>
+</Layout>
+
+<style>
+	section{
+		align-self: flex-start;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	section header{
+		align-self: stretch;
+	}
+</style>
