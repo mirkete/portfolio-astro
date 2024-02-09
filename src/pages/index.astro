@@ -4,8 +4,8 @@ import Header from "../components/Header.astro";
 import Section from '../components/Section.astro';
 import Tag from '../components/Tag.astro';
 import Course from "../components/Course.astro"
-import { courses, knowledges } from "../data/data.js"
 import Project from "../components/Project.astro"
+import { courses, knowledges, projects } from "../data/data.js"
 ---
 
 <Layout title="Mirko Sáenz Valiente - Portfolio">
@@ -29,8 +29,13 @@ import Project from "../components/Project.astro"
 			}
 		</div>
 	</Section>
-	<Section animated={true} title="Proyectos">
-		<Project></Project>
+	<Section class="projects-container" animated={true} title="Proyectos">
+		{
+			projects.map((project) => {
+				const {name, image, description, url} = project
+				return <Project url={url} name={name} image={image} description={description}></Project>
+			})
+		}
 	</Section>
 </Layout>
 <style>
@@ -49,6 +54,12 @@ import Project from "../components/Project.astro"
 		display: flex;
 		flex-direction: column;
 		gap: 12px;
+	}
+
+	.projects-container{
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
 	}
 </style>
 <style is:global>

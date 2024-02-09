@@ -1,27 +1,37 @@
+---
+const { name, description, image, url } = Astro.props
+---
+
 <div class="project">
-    <img class="project-image" src="https://static.semrush.com/blog/uploads/media/ed/9b/ed9b42a338de806621bdaf70293c2e7e/image.png" alt="">
     <div>
-        <a class="medium-text project-anchor" href="/">
-            Home Storage
+        <a target="_blank" class="medium-text project-anchor" href={url}>
+            {name}
             <img src="/redirect.svg" width="22px" alt="">
         </a>
-        <p class="small-text">Aplicación simple que permite intercambiar archivos mediante la red local</p>
+        <p class="small-text">{description}</p>
+    </div>
+    <div class="project-image-container">
+        <img class="project-image" src={image} alt="">
     </div>
 </div>
 <style>
     .project{
-        position: relative;
         display: flex;
         gap: 12px;
-        flex-direction: column;
-        align-items: flex-start;
-        z-index: 10;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
-
+    
+    .project-details p{
+        margin: 0;
+    }
+    
     .project h3{
         margin: 0;
     }
-
+    
     .project-anchor{
         text-decoration: underline;
         display: flex;
@@ -32,17 +42,15 @@
         font-weight: 700;
     }
 
-    .project-image{
-        display: none;
+    .project-image-container{
+        display: flex;
+        justify-content: flex-end;
+        flex: 1 0 20%;
     }
-
-    @media (width >= 650px){
-        .project{
-            flex-direction: row;
-        }
-
-        .project-image{
-            width: 150px;
-        }
+    
+    .project-image{
+        width: 110px;
+        object-fit: cover;
+        border-radius: 12px;
     }
 </style>

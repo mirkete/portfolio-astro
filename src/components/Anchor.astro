@@ -4,7 +4,7 @@ const { url, text, color, icon } = Astro.props
 const anchorStyles = `--color:${color};`
 ---
 
-<a style={anchorStyles} class="anchor" href={ url }>
+<a target="_blank" style={anchorStyles} class="anchor" href={ url }>
     <img class="anchor-image" src={icon} alt="">
     <div class="anchor-bottom-line" style={anchorStyles}></div>
     <p class="anchor-text">{text}</p>

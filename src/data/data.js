@@ -10,3 +10,8 @@ export const courses = [
 	{title: "Ingeniería Informatica", institute: "Universidad de Buenos Aires", date: "2022 - Actualidad"},
 	{title: "Bachiller en Ciencias Sociales", institute: 'E.E.S N°1 "Francisco Narciso Laprida"', date: "2017 - 2022"}
 ]
+
+export const projects = [
+	{name: "Home Storage", image: "/home-storage.png", url:"https://github.com/mirkete/home-storage", description: "Aplicación web que permite intercambiar archivos mediante red local."},
+	{name: "Promiedos Scrapper", image: "/promiedos.png", url:"https://github.com/mirkete/promiedos-scrapper", description: "Web scrapper del sitio promiedos"},
+]
