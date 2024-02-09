@@ -1,0 +1,28 @@
+---
+const {title, institute, date} = Astro.props
+---
+
+<div class="course">
+    <h3>{title}</h3>
+    <p class="small-text">
+        <span>{institute}</span>
+        <br>
+        <span>{date}</span>
+    </p>
+</div>
+<style>
+.course{
+    padding-left: 30px;
+    justify-content: flex-start;
+    position: relative;
+}
+.course::after{
+    content:"";
+    position: absolute;
+    left: -4px;
+    top: 10%;
+    height: 80%;
+    width: 4px;
+    background-color: rgb(0,0,0,.7);
+}
+</style>

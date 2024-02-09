@@ -1,5 +1,5 @@
 ---
-const { text, color } = Astro.props
+const { text, color, icon } = Astro.props
 
 const isRgbColor = color.includes("rgb")
 const backgroundColor = isRgbColor ? color.slice(0,-1).concat(", .20)") : color.concat("48")
@@ -8,11 +8,24 @@ const backgroundStyle = `background-color:${backgroundColor};`
 let tagStyles = `border:2px solid ${color}; color:${color};`.concat(backgroundStyle)
 ---
 
-<p class=`small-text tag` style={tagStyles}>{text}</p>
+<div class="tag" style={tagStyles}>
+    <img class="tag-icon" src={icon} alt="">
+    <p class=`small-text tag-text`>{text}</p>
+</div>
 <style>
     .tag{
-        padding: 12px 16px;
+        display: flex;
+        align-items: center;
         border-radius: 12px;
+        gap: 8px;
+        padding: 12px 16px;
+    }
+
+    .tag-icon{
+        width: 24px;
+    }
+
+    .tag-text{
         margin: 0;
     }
 
