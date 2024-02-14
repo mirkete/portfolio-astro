@@ -5,15 +5,24 @@ import Section from '../components/Section.astro';
 import Tag from '../components/Tag.astro';
 import Course from "../components/Course.astro"
 import Project from "../components/Project.astro"
-import { courses, knowledges, projects } from "../data/data.js"
+import { courses, projects, frontendSkills, backendSkills } from "../data/data.js"
 ---
 
 <Layout title="Mirko Sáenz Valiente - Portfolio">
 	<Header></Header>
-	<Section animated={true} title="Conocimientos">
+	<Section animated={true} title="Front-end Skills">
 		<div style="display: flex; gap:12px; flex-wrap:wrap;">
 			{
-				knowledges.map((item) => {
+				frontendSkills.map((item) => {
+					return <Tag text={item.name} color={item.color} icon={item.icon} />
+				})
+			}
+		</div>
+	</Section>
+	<Section animated={true} title="Back-end Skills">
+		<div style="display: flex; gap:12px; flex-wrap:wrap;">
+			{
+				backendSkills.map((item) => {
 					return <Tag text={item.name} color={item.color} icon={item.icon} />
 				})
 			}
@@ -32,24 +41,12 @@ import { courses, knowledges, projects } from "../data/data.js"
 	<Section class="projects-container" animated={true} title="Proyectos">
 		{
 			projects.map((project) => {
-				const {name, image, description, url} = project
-				return <Project url={url} name={name} image={image} description={description}></Project>
+				return <Project data={project}></Project>
 			})
 		}
 	</Section>
 </Layout>
 <style>
-	section{
-		align-self: flex-start;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
-	section header{
-		align-self: stretch;
-	}
-
 	.course-list{
 		display: flex;
 		flex-direction: column;

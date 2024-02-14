@@ -2,7 +2,7 @@
 const { text, color, icon } = Astro.props
 
 const isRgbColor = color.includes("rgb")
-const backgroundColor = isRgbColor ? color.slice(0,-1).concat(", .20)") : color.concat("48")
+const backgroundColor = isRgbColor ? color.slice(0,-1).concat(", .15)") : color.concat("15")
 const backgroundStyle = `background-color:${backgroundColor};`
 
 let tagStyles = `border:2px solid ${color}; color:${color};`.concat(backgroundStyle)

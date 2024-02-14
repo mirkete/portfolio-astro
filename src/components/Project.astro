@@ -1,5 +1,8 @@
 ---
-const { name, description, image, url } = Astro.props
+const { data } = Astro.props
+const {name, image, description, url, skills:skillsArray} = data
+
+const skills = skillsArray.join(", ")
 ---
 
 <div class="project">
@@ -9,6 +12,7 @@ const { name, description, image, url } = Astro.props
             <img src="/redirect.svg" width="22px" alt="">
         </a>
         <p class="small-text">{description}</p>
+        <p class="small-text" style={{color: "grey"}}>{skills}</p>
     </div>
     <div class="project-image-container">
         <img class="project-image" src={image} alt="">
@@ -21,7 +25,7 @@ const { name, description, image, url } = Astro.props
         width: 100%;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
     }
     
     .project-details p{
@@ -46,6 +50,7 @@ const { name, description, image, url } = Astro.props
         display: flex;
         justify-content: flex-end;
         flex: 1 0 20%;
+        padding: 8px;
     }
     
     .project-image{
