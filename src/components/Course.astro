@@ -3,11 +3,11 @@ const {title, institute, date} = Astro.props
 ---
 
 <div class="course">
-    <h3>{title}</h3>
+    <h3 class="medium-text">{title}</h3>
     <p class="small-text">
         <span>{institute}</span>
         <br>
-        <span style={{color: "grey"}}>{date}</span>
+        <span style={{color: "#c5c5c5"}}>{date}</span>
     </p>
 </div>
 <style>
@@ -23,6 +23,6 @@ const {title, institute, date} = Astro.props
     top: 10%;
     height: 80%;
     width: 4px;
-    background-color: rgb(0,0,0,.7);
+    background-color: white;
 }
 </style>

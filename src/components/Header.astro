@@ -8,14 +8,14 @@ import Anchor from "./Anchor.astro"
     <figure class="foto-perfil">
         <img src="/foto-mia.jpg" alt="" width="216px">
     </figure>
-    <h1>Soy Mirko, <span style="color: rgb(36, 145, 255);">desarrolador de software.</span></h1>
+    <h1>Soy Mirko, <span class="developer-title">desarrolador de software.</span></h1>
     <p class="medium-text">
         Apasionado de las tecnologías. Estudiante de Ingeniería Informatica. 
         <span style="font-weight:bold;">Aprendiendo diariamente.</span>
     </p>
     <div class="social-medias">
-        <Anchor icon="/github.svg" url="https://github.com/mirkete" color="#2c3e50" text="GitHub"/>
-        <Anchor icon="/linkedin.svg" url="https://www.linkedin.com/in/mirko-s%C3%A1enz-valiente-515673194/" color="darkblue" text="LinkedIn"/>
+        <Anchor icon="/github.svg" url="https://github.com/mirkete" color="white" text="GitHub"/>
+        <Anchor icon="/linkedin.svg" url="https://www.linkedin.com/in/mirko-s%C3%A1enz-valiente-515673194/" color="#43c5e1" text="LinkedIn"/>
     </div>
 </header>
 <style>
@@ -42,4 +42,9 @@ import Anchor from "./Anchor.astro"
         gap: 12px;
     }
 
+    .developer-title{
+        color: transparent;
+        background: linear-gradient(#6f6f6f, #ffffff);
+        background-clip: text;
+    }
 </style>
