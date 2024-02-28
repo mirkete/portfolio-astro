@@ -8,8 +8,9 @@ export const frontendSkills = [
 
 export const backendSkills = [
 	{ name: "Node.js", color: "rgb(134,190,0)", icon: "/nodejs.svg" },
-	{ name: "SQL", color: "#03A9F4", icon: "/sql.svg" },
 	{ name: "Firebase", color: "rgb(247,162,18)", icon: "/firebase.svg" },
+	{ name: "SQL", color: "#03A9F4", icon: "/sql.svg" },
+	{ name: "AWS", color: "#FF9900", icon: "/aws.svg" },
 ]
 
 export const courses = [
