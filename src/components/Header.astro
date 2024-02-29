@@ -8,7 +8,7 @@ import Anchor from "./Anchor.astro"
     <figure class="foto-perfil">
         <img src="/foto-mia.jpg" alt="" width="216px">
     </figure>
-    <h1>Soy Mirko, <span class="developer-title">desarrolador de software.</span></h1>
+    <h1 class="bigger-text">Soy Mirko, <span class="developer-title">desarrolador de software.</span></h1>
     <p class="medium-text">
         Apasionado de las tecnologías. Estudiante de Ingeniería Informatica. 
         <span style="font-weight:bold;">Aprendiendo diariamente.</span>
@@ -29,6 +29,7 @@ import Anchor from "./Anchor.astro"
 
     .foto-perfil{
         flex-basis: 100%;
+        margin: 0;
     }
 
     .foto-perfil img{
@@ -46,5 +47,20 @@ import Anchor from "./Anchor.astro"
         color: transparent;
         background: linear-gradient(#6f6f6f, #ffffff);
         background-clip: text;
+    }
+
+    @media (width >= 1200px){
+        header{
+            justify-content: flex-start;
+            align-content: center;
+            text-align: left;
+            margin: 72px 0px;
+            width: 800px;
+            text-wrap: pretty;
+        }
+
+        .social-medias{
+            justify-content: flex-start;
+        }
     }
 </style>
