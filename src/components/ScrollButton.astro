@@ -1,0 +1,73 @@
+---
+
+---
+
+<button class="scrolltop">
+  <svg width="24px" height="24px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M572.235 205.282v600.365a30.118 30.118 0 1 1-60.235 0V205.282L292.382 438.633a28.913 28.913 0 0 1-42.646 0 33.43 33.43 0 0 1 0-45.236l271.058-288.045a28.913 28.913 0 0 1 42.647 0L834.5 393.397a33.43 33.43 0 0 1 0 45.176 28.913 28.913 0 0 1-42.647 0l-219.618-233.23z"/></svg>
+</button>
+<script>
+  const button = document.querySelector(".scrolltop")
+
+  button.addEventListener("click", (e) => {
+    window.scroll({top: 1, behavior: "smooth"})
+  })
+</script>
+<style>
+  .scrolltop{
+    z-index: 10;
+		display: grid;
+		place-content: center;
+		width: 36px;
+		height: 36px;
+		position: fixed;
+		right: 48px;
+		cursor: pointer;
+		bottom: 36px;
+		background: none;
+		outline: none;
+		border: none;
+		font-size: 24px;
+		view-timeline-name: --scroll-button;
+		view-timeline-axis: y;
+		animation-timeline: --scroll-button;
+		animation-range: entry 110% exit 100%;
+		animation-name: show-arrow;
+		border: 1px solid white;
+		border-radius: 10px;
+		transition: background-color .15s ease;
+	}
+
+	.scrolltop svg{
+		color: white;
+	}
+
+	.scrolltop:hover{
+		background-color: rgb(255,255,255,.9);	
+	}
+	.scrolltop:hover svg{
+		color: black;
+	}
+  @keyframes show-arrow{
+		0%{
+			display: none;
+      cursor: default;
+			opacity: 0;
+		}
+		70%{
+      display: grid;
+      cursor: default;
+			opacity: 0;
+		}
+
+		100%{
+			display: grid;
+      cursor: pointer;
+			opacity: 1;
+		}
+	}
+  @media (width <= 650px){
+    .scrolltop{
+      display: none;
+    }
+  }
+</style>
