@@ -5,6 +5,7 @@ import Section from '../components/Section.astro';
 import Tag from '../components/Tag.astro';
 import Course from "../components/Course.astro"
 import Project from "../components/Project.astro"
+import EasterEgg from '../components/EasterEgg.astro';
 import { courses, projects, frontendSkills, backendSkills } from "../data/data.js"
 ---
 
@@ -45,6 +46,9 @@ import { courses, projects, frontendSkills, backendSkills } from "../data/data.j
 			})
 		}
 	</Section>
+	<div style="align-self:center;">
+		<EasterEgg/>
+	</div>
 </Layout>
 <style is:global>
 	@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins&display=swap');

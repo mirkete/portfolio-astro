@@ -4,9 +4,8 @@ const {title, institute, date} = Astro.props
 
 <div class="course">
     <h3 class="medium-text">{title}</h3>
-    <p class="small-text">
+    <div class="course-details">
         <span>{institute}</span>
-        <br>
         <span style={{color: "#c5c5c5"}}>{date}</span>
     </p>
 </div>
@@ -24,5 +23,10 @@ const {title, institute, date} = Astro.props
     height: 80%;
     width: 4px;
     background-color: white;
+}
+.course-details{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
 }
 </style>
