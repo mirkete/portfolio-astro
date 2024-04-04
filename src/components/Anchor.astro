@@ -7,7 +7,7 @@ const anchorStyles = `--color:${color};`
 <a target="_blank" style={anchorStyles} class="anchor" href={ url }>
     <img class="anchor-image" src={icon} alt="">
     <div class="anchor-bottom-line" style={anchorStyles}></div>
-    <p class="anchor-text">{text}</p>
+    <p class="anchor-text small-text">{text}</p>
 </a>
 <style>
     .anchor{
@@ -29,8 +29,6 @@ const anchorStyles = `--color:${color};`
     .anchor-text{
         margin: 0;
         padding: 8px 12px;
-        font-size: 16px;
-        font-weight: 500;
         transition: transform .12s linear;
     }
 
